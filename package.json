@@ -2,10 +2,11 @@
 	"name": "neonwidgetback",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "app.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "node -r dotenv/config index.js"
+		"dev": "node -r dotenv/config app.js",
+		"start": "node -r dotenv/config app.js"
 	},
 	"repository": {
 		"type": "git",

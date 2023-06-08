@@ -1,7 +1,21 @@
 const express = require("express")
+const rateLimit = require("express-rate-limit")
 const cors = require("cors")
 const { google } = require("googleapis")
+
 const app = express()
+const waitForSec = 30
+
+const limit = rateLimit({
+	windowMs: 1000 * waitForSec, // 1 hour
+	max: 10,
+	message:
+		"Слишком много запросов с одного IP, пожалуйста подождите " +
+		waitForSec +
+		" секунд",
+})
+
+app.use("/", limit)
 
 // настройки cors
 app.use(

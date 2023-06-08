@@ -7,8 +7,8 @@ const app = express()
 const waitForSec = 30
 
 const limit = rateLimit({
-	windowMs: 1000 * waitForSec, // 1 hour
-	max: 10,
+	windowMs: 1000 * waitForSec,
+	max: 5,
 	message:
 		"Слишком много запросов с одного IP, пожалуйста подождите " +
 		waitForSec +
